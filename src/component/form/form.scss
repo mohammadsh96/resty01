@@ -1,0 +1,86 @@
+$backgroundColor: #6b0d0d;
+$radius: 40%;
+$font-size: 25px;
+form {
+  box-shadow: #6b0d0d;
+  box-shadow: 5px;
+  display: inline-block;
+  margin: auto;
+  width: 200px;
+font-size: large;
+color: rgb(23, 3, 80);
+  label {
+    display: flex;
+    margin: 1rem 0;
+    font-size: large;
+
+    &.methods {
+      button {
+        cursor: pointer;
+        margin-right: 1rem;
+        padding: .25rem .5rem;
+        background: rgb(67, 152, 231);
+        font-size: 15px;
+        font-weight: 600;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+        #get{
+          background: rgb(103, 233, 17);
+        }
+        #post{
+          background: rgb(12, 40, 201);
+        }
+        #put{
+          background: rgb(197, 194, 19);
+        }
+        #delete{
+          background: rgb(196, 22, 22);
+        }
+        
+
+        &:hover, &.active {
+          background: rgb(51, 235, 45);
+        }
+      }
+    }
+  
+  }
+  
+}
+select{
+
+  width: 200px;
+}
+p{
+  color: dodgerblue;
+margin-left: 20px;
+
+}
+h4{
+  color: rgb(133, 8, 116);
+
+  margin-left: 20px
+}
+ul{
+
+font-size: 15px;
+color :rgb(7, 131, 79)
+
+}
+input{
+
+
+  box-sizing: border-box;
+  box-shadow: rgb(24, 24, 27);
+width: 200px;
+  border: 3px solid currentColor;
+  border-radius: 15%;
+  padding: calc(var(--size-bezel) * 1.5)
+}
+#show{
+  background: rgba(220, 236, 5, 0.856);
+border: rgb(8, 8, 8);
+border-radius:15%;
+box-shadow: black;
+font-weight: 600;
+}
