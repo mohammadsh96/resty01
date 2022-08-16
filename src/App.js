@@ -5,10 +5,10 @@ import Footer from "./component/footer/footer";
 import Form from "./component/form/form";
 import Results from "./component/results/result";
 import "./app.scss";
-import DataReducer ,{addData} from "./component/useReducer";
+import DataReducer ,{addData ,removeUrl,emptyAction} from "./component/useReducer";
 
 const initState ={
-
+url:[],
   data:[],
   count :0
   }
@@ -27,6 +27,8 @@ function App() {
       var data = await response.json();
 alert("Nice choice ✔✔😎!")
       // console.log(data);
+      data.url=requestParams.url
+      console.log(data.url,"++++++++++++++++++++")
       dispatch(addData(data))
       
       if (requestParams) {
@@ -45,7 +47,7 @@ alert("oh No.. 💣💣💥")
     } 
 
   }
-console.log("<><<<<<<<<<<<<<<<<<<<<++++++++++++++++++++++++++++++++++++++++",apiData);
+console.log(apiData.url);
   return (
     <React.Fragment>
 <Header />
@@ -55,7 +57,22 @@ console.log("<><<<<<<<<<<<<<<<<<<<<++++++++++++++++++++++++++++++++++++++++",api
       
       <div data-testid="url">URL: {user.requestParams.url}</div>
       <h3> you have tested : {apiData.count} api's till now 😛 check data in the console</h3>
-{/* <h4>{apiData.data}</h4> */}
+{/* <h4>{apiData.data}</h4> */}<p>list of API tested</p>
+<ul> 
+{
+                    apiData.url.map((url, idx) => {
+                        return (
+                            // <li key={idx} onClick={() => dispatch(removePerson(person))}>{person}</li>
+                            <>
+                           
+                            <li key={idx} onClick={() => dispatch(removeUrl(idx))} >{url} <span id="delete">delete</span> </li>
+                            </>
+                            
+                        )
+                    })
+                }
+</ul>
+<button id="clear" onClick={() => dispatch(emptyAction())}>Clear All</button>
       <Form handleApiCall={callApi} />
      <Results  data={user.data} />
      

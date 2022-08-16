@@ -44,13 +44,13 @@ function Form(props) {
   return (
     <>
       
-      <ul >
+      {/* <ul >
         API options : <br></br>
         https://api.themoviedb.org/3/movie/550?api_key=6f7fea2a73b77fb5ffeb104ba61d85d9<br></br>
         https://pokeapi.co/api/v2/pokemon<br></br>
         https://jsonplaceholder.typicode.com/users<br></br>
         https://datausa.io/api/data?drilldowns=Nation&measures=Population
-      </ul>
+      </ul> */}
      
       <p> API - URL : {urlName} </p>
       <form onSubmit={handleSubmit}>
